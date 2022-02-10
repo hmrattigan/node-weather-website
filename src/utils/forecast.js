@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, callback) => {
             // This callback below doesn't work. Should look in more detail at what happens in the response body if I put an incorrect latitude in the URL for example.
             callback('No results for co-ordinates', undefined)
         } else {
-            callback(undefined, `Today there will be ${body.weather[0].main}. The temperature is ${body.main.temp} degrees. It feels like ${body.main.feels_like} degrees.`)
+            callback(undefined, `Today will be ${body.weather[0].main}. The temperature is ${body.main.temp} degrees. It feels like ${body.main.feels_like} degrees. The high today is ${body.main.temp_max} with a low of ${body.main.temp_min}.`)
         }
     })
 }
